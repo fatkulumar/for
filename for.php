@@ -1,5 +1,6 @@
 
 <?php
+
     $con=mysqli_connect("localhost","root","","test");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -8,16 +9,24 @@
                         FROM tb_kriteria t1
                         INNER JOIN tb_kriteria t2
                         ON t2.id_kriteria > t1.id_kriteria");
+<<<<<<< HEAD
     echo '<form action="" method="POST">';
+=======
+>>>>>>> ea12af5cb1420fa5070581935db7b01c5d4a0b29
     echo "<table>";
     $no = 0;
     while($row = mysqli_fetch_array($result)) {
         echo "<tr>";
         echo "<td>". ++$no . "</td>";
+<<<<<<< HEAD
+=======
+        
+>>>>>>> ea12af5cb1420fa5070581935db7b01c5d4a0b29
             for($i = 0; $i < count($row)-1; $i++){
                 $keys = array_keys($row);
                 if($i == 1){
                     echo "<td>";
+<<<<<<< HEAD
                     echo '<select name="data'.$no.'" id="">';
                     $sql = mysqli_query($con, "SELECT * FROM tb_kriteria");
                     while($op = mysqli_fetch_array($sql)){
@@ -45,3 +54,15 @@
     echo "</table>";
     echo '</form>';
 ?>
+=======
+                    echo '<select name="" id="">
+                            <option value=""></option>
+                        </select>';
+                    echo "</td>";
+                } 
+                    echo "<td>" . $row[$keys[$i]] . "</td>";
+            }
+                echo "</tr>";
+    }
+    echo "</table>";
+>>>>>>> ea12af5cb1420fa5070581935db7b01c5d4a0b29
